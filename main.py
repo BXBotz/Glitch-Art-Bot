@@ -15,11 +15,11 @@ Bot = Client(
 
 
 START_TEXT = """
-Hai {}, 
+**Hai {}, 
 
-I am a photo to glitch art telegram bot. Send me any photo I will convert photo to glitch art
+Iam A Simple photo to glitch art telegram bot. Send me any photo I will convert photo to glitch art
 
-<b>Made With ❤ By @BX_Botz</b>
+Made With ❤ By @BX_Botz**
 """
 
 SOURCE_TEXT = """<b>🎁 MY Source Code</b>"""
@@ -30,15 +30,10 @@ START_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton('Support Group', url='https://telegram.me/BXSupport')
     ],
     [
-        InlineKeyboardButton('Source Code', url='https://github.com/FayasNoushad/Glitch-Art-Bot')
+        InlineKeyboardButton('Other Bots', url='https://telegram.me/BX_Botz/31')
     ]]
 )
 
-SOURCE_BUTTONS = InlineKeyboardMarkup(
-    [[
-        InlineKeyboardButton('🎨 Source Code ', url='https://github.com/FayasNoushad/Glitch-Art-Bot')
-    ]]
-)
 
 PATH = os.environ.get("PATH", "./DOWNLOADS")
 
@@ -51,14 +46,7 @@ async def start(bot, update):
         quote=True
     )
 
-@Bot.on_message(filters.private & filters.command(["source"]))
-async def source(bot, update):
-    await update.reply_text(
-        text=SOURCE_TEXT,
-        reply_markup=SOURCE_BUTTONS,
-        disable_web_page_preview=True,
-        quote=True
-    )
+
 
 
 @Bot.on_message(filters.private & filters.photo)
